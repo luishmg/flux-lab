@@ -16,7 +16,7 @@ metadata:
   name: minkube-namespaces
   namespace: kube-system
 spec:
-  interval: 1m0s
+  interval: 10m0s
   path: ./deploy/stg
   prune: true
   sourceRef:
