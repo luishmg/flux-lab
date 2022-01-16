@@ -16,8 +16,8 @@ metadata:
   name: minkube-namespaces
   namespace: kube-system
 spec:
-  interval: 10m0s
-  path: ./deploy/staging
+  interval: 1m0s
+  path: ./deploy/stg
   prune: true
   sourceRef:
     kind: GitRepository
