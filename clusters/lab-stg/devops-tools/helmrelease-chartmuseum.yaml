@@ -12,5 +12,8 @@ spec:
         kind: HelmRepository
         name: chartmuseum
       version: 3.4.0
-  interval: 1m0s
-
+      interval: 1m0s
+  values:
+    env:
+      open:
+        STORAGE: local
