@@ -1,0 +1,15 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: app
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://github.com/luishmg/lab-app-chart.git
+  ref:
+    branch: main
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/charts/    
