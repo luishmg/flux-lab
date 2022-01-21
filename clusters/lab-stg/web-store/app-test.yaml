@@ -18,7 +18,7 @@ metadata:
   name: app-test
   namespace: web-store
 spec:
-  interval: 10m0s
+  interval: 15m0s
   path: ./deploy/stg
   prune: true
   sourceRef:
