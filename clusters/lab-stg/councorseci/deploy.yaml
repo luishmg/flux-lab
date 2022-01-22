@@ -16,7 +16,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: concourse/concourse
+      chart: concourse
       sourceRef:
         kind: HelmRepository
         name: concourse
