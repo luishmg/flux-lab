@@ -16,12 +16,12 @@ metadata:
 spec:
   chart:
     spec:
-      chart: concourse/concourse
+      chart: concourse
       sourceRef:
         kind: HelmRepository
         name: concourse
         namespace: flux-system
-      version: 0.1.0
+      version: 16.1.16
   interval: 1m0s
   values:
     fullnameOverride: concourse
