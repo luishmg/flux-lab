@@ -1,4 +1,12 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: concourse
+  labels:
+    team: DevOps
+    istio-injection: enable
+---
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
@@ -25,3 +33,9 @@ spec:
   interval: 1m0s
   values:
     fullnameOverride: concourse
+    web:
+      kubernetes:
+        namespacePrefix: concourse
+      prometheus:
+        ServiceMonitor:
+          namespace: concourse
