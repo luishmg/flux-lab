@@ -35,6 +35,7 @@ spec:
     fullnameOverride: concourse
     concourse:
       web:
+        enabled: true
         auth:
           mainTeam:
             localUser: admin 
@@ -43,20 +44,20 @@ spec:
         tls:
           enabled: false
           bindPort: 443
-        enabled: true
       kubernetes:
         keepNamespace: false
-      # worker:
-      #   kind: Deployment
-      #   baggageclaim:
-      #     driver: btrfs
+      worker:
+        kind: Deployment
+        baggageclaim:
+          driver: btrfs
       secrets:
         localUsers: admin:$2y$10$7CiEp1/hCbDpgTvo2m478e9ZvzclxXr3tOPXzYqvUr9GMsBnEZXcS
-      #   workerKey: |
-      #     -----BEGIN RSA PRIVATE KEY-----
-      #     data data data data
-      #     -----END RSA PRIVATE KEY-----
-      #   workerKeyPub: ssh-rsa datadatadata comment
+        # create: false
+        # workerKey: |
+        #   -----BEGIN RSA PRIVATE KEY-----
+        #   data data data data
+        #   -----END RSA PRIVATE KEY-----
+        # workerKeyPub: ssh-rsa datadatadata comment
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
