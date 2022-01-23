@@ -33,6 +33,9 @@ spec:
   interval: 1m0s
   values:
     fullnameOverride: concourse
+    concourse:
+      web:
+        externalUrl: "concourse-ci.k8s.stg.lab.internal"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
