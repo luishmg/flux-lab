@@ -6,24 +6,24 @@ metadata:
   labels:
     team: DevOps
     istio-injection: enabled
----
-apiVersion: bitnami.com/v1alpha1
-kind: SealedSecret
-metadata:
-  creationTimestamp: null
-  name: concourse-postgresql
-  namespace: concourse
-spec:
-  encryptedData:
-    postgresql-password: AgACZn4/3ce6qKXv3Knf2T+Al1u2wAWqVgTHR4/hBcQpnKFMY8YxlaVBtQXZWcSfhttTLTNcNT4vAMt4aLYJLskCOHABZOfRK5lX+G1VoT1npmuTAeXrYaCOKlyusjMRLwCS34rs/QyUm65Eqql4oT0cNuKGs3gLQMTXRGWXEVe3Y7kinYtmuuIjE3SZ1rrCTs777zT80/WqjltldkKoYT7JbiEOpxljnWf0N6SdYst16lIDRKWQhRCNyCwfdxQbM135Mj0w4N+KwuRALeCkdyH1vEo4GfHMBwshs3+4IZe18E+g13CImYSR659+fEdmDYxT0BnIn7tf9+0lDzuOj9dr6rsVkGcGWaxMnXCzL8nrZvZSmLiy4fSpGZk/JhQH0wbapng41QT1AB5xVAilqfAxsFbZSmvZscbJbmYFSkQH3Ky8rZbzYkuSGqPsUf1Q5Kl1GkiX4MYidAHKsfxc6vlVuaIKAAFxVk7PkJnR3t+0qdkJ7iVhJGQwfS8Kcr1sNquEr1aPWQGpLlu3AvST21vSNKd5PyOVbzaIjBekLonqg0qw43MDLOF4+OjctyLCgcqv/Dj40nuuGTY7e2DD++/lbZE4xLA32rktmBwSbo5iwUzYviNgdRcNOrQ4UAY6rY4m5/j+TovIHzfC1VIfLVmkdKsmDtVf6ctl9rjmySZxKDLCsBXf2tE1dR0bF8n0w5BtuzV/ffSq5Kc=
-    postgresql-postgres-password: AgB3ErxFqyqJEnCWUvwXODPT0oFHKwNjNq0ZbKzEJDGQK5OA4J7C3kP8rd67T2u/PT3+R36yJ9qV+4GkfyHI+u1hmnu0Dvbh8rjyZjGRosg0wwa17r2LSLeb84/5dFyvCHAkdgmDWKU0D4zEjP1FCDnuTSkb0+t/ukBBQWg5ObBmW/HzMGnBQ64M8IKLCfixBEAXjO+AovBeq41IerrhwjdLqDwN9kFS0vZhwgVyv7ufy6jdWYilIn+CfNIj74wPsvBZDyhDQh9xQAGbrswaIwISIAaC9IW4ntQp7TQXS88Y+z7EEujWpvsTZoJhEQq8o5nGShlqzSGBSVKjbVJrTXcW1JeHO+o6xtYyX7sgbs+smrrjnK4k9Gh9Z1D7Gmp2y28CMlvz4EiWLU4dyPlHDSS0eB/FcEKJxI24xCY8rPvmEZbmU7cOH5r0sLb9XTnMGHer5GooCIEksqY+f1cHZB3IHaFicXWSpyPKwS2I7YaW1bRRgQjPkg945iep3jKe8MBmZd1XvdkhyzlW4j0AklerLS/HJRWIvvNXwnIDvB5g1tpRiiSqvN4U/1bqaTwbU/1VJm9Wn8pQTtFjycirIzoWmXjtrnRaSdt4uQogx5jh1y3W7prpgJeUK3cYdnQgT92089mIGs2m7Ij145eiQta4L/bCqBf6NYO/XQKIUNPSzcXoEQdDJHzBHa7SP4WsNbyMsmBBqdWKS+Pk
-  template:
-    data: null
-    metadata:
-      creationTimestamp: null
-      name: concourse-postgresql
-      namespace: concourse
-    type: Opaque
+# ---
+# apiVersion: bitnami.com/v1alpha1
+# kind: SealedSecret
+# metadata:
+#   creationTimestamp: null
+#   name: concourse-postgresql
+#   namespace: concourse
+# spec:
+#   encryptedData:
+#     postgresql-password: AgACZn4/3ce6qKXv3Knf2T+Al1u2wAWqVgTHR4/hBcQpnKFMY8YxlaVBtQXZWcSfhttTLTNcNT4vAMt4aLYJLskCOHABZOfRK5lX+G1VoT1npmuTAeXrYaCOKlyusjMRLwCS34rs/QyUm65Eqql4oT0cNuKGs3gLQMTXRGWXEVe3Y7kinYtmuuIjE3SZ1rrCTs777zT80/WqjltldkKoYT7JbiEOpxljnWf0N6SdYst16lIDRKWQhRCNyCwfdxQbM135Mj0w4N+KwuRALeCkdyH1vEo4GfHMBwshs3+4IZe18E+g13CImYSR659+fEdmDYxT0BnIn7tf9+0lDzuOj9dr6rsVkGcGWaxMnXCzL8nrZvZSmLiy4fSpGZk/JhQH0wbapng41QT1AB5xVAilqfAxsFbZSmvZscbJbmYFSkQH3Ky8rZbzYkuSGqPsUf1Q5Kl1GkiX4MYidAHKsfxc6vlVuaIKAAFxVk7PkJnR3t+0qdkJ7iVhJGQwfS8Kcr1sNquEr1aPWQGpLlu3AvST21vSNKd5PyOVbzaIjBekLonqg0qw43MDLOF4+OjctyLCgcqv/Dj40nuuGTY7e2DD++/lbZE4xLA32rktmBwSbo5iwUzYviNgdRcNOrQ4UAY6rY4m5/j+TovIHzfC1VIfLVmkdKsmDtVf6ctl9rjmySZxKDLCsBXf2tE1dR0bF8n0w5BtuzV/ffSq5Kc=
+#     postgresql-postgres-password: AgB3ErxFqyqJEnCWUvwXODPT0oFHKwNjNq0ZbKzEJDGQK5OA4J7C3kP8rd67T2u/PT3+R36yJ9qV+4GkfyHI+u1hmnu0Dvbh8rjyZjGRosg0wwa17r2LSLeb84/5dFyvCHAkdgmDWKU0D4zEjP1FCDnuTSkb0+t/ukBBQWg5ObBmW/HzMGnBQ64M8IKLCfixBEAXjO+AovBeq41IerrhwjdLqDwN9kFS0vZhwgVyv7ufy6jdWYilIn+CfNIj74wPsvBZDyhDQh9xQAGbrswaIwISIAaC9IW4ntQp7TQXS88Y+z7EEujWpvsTZoJhEQq8o5nGShlqzSGBSVKjbVJrTXcW1JeHO+o6xtYyX7sgbs+smrrjnK4k9Gh9Z1D7Gmp2y28CMlvz4EiWLU4dyPlHDSS0eB/FcEKJxI24xCY8rPvmEZbmU7cOH5r0sLb9XTnMGHer5GooCIEksqY+f1cHZB3IHaFicXWSpyPKwS2I7YaW1bRRgQjPkg945iep3jKe8MBmZd1XvdkhyzlW4j0AklerLS/HJRWIvvNXwnIDvB5g1tpRiiSqvN4U/1bqaTwbU/1VJm9Wn8pQTtFjycirIzoWmXjtrnRaSdt4uQogx5jh1y3W7prpgJeUK3cYdnQgT92089mIGs2m7Ij145eiQta4L/bCqBf6NYO/XQKIUNPSzcXoEQdDJHzBHa7SP4WsNbyMsmBBqdWKS+Pk
+#   template:
+#     data: null
+#     metadata:
+#       creationTimestamp: null
+#       name: concourse-postgresql
+#       namespace: concourse
+#     type: Opaque
 ---
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
