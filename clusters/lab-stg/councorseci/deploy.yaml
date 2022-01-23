@@ -33,9 +33,3 @@ spec:
   interval: 1m0s
   values:
     fullnameOverride: concourse
-    web:
-      kubernetes:
-        namespacePrefix: concourse
-      prometheus:
-        ServiceMonitor:
-          namespace: concourse
