@@ -71,43 +71,43 @@ metadata:
 spec:
   interval: 1m
   url: https://concourse-charts.storage.googleapis.com/
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: concourse
-  namespace: concourse
-spec:
-  chart:
-    spec:
-      chart: concourse
-      sourceRef:
-        kind: HelmRepository
-        name: concourse
-        namespace: flux-system
-      version: 16.1.16
-  interval: 1m0s
-  values:
-    fullnameOverride: concourse
-    concourse:
-      web:
-        enabled: true
-        auth:
-          mainTeam:
-            localUser: admin 
-        externalUrl: http://concourse-ci.k8s.stg.lab.internal
-        bindPort: 80
-        tls:
-          enabled: false
-          bindPort: 443
-      kubernetes:
-        keepNamespace: false
-      worker:
-        kind: Deployment
-        baggageclaim:
-          driver: btrfs
-    secrets:
-      create: false
+# ---
+# apiVersion: helm.toolkit.fluxcd.io/v2beta1
+# kind: HelmRelease
+# metadata:
+#   name: concourse
+#   namespace: concourse
+# spec:
+#   chart:
+#     spec:
+#       chart: concourse
+#       sourceRef:
+#         kind: HelmRepository
+#         name: concourse
+#         namespace: flux-system
+#       version: 16.1.16
+#   interval: 1m0s
+#   values:
+#     fullnameOverride: concourse
+#     concourse:
+#       web:
+#         enabled: true
+#         auth:
+#           mainTeam:
+#             localUser: admin 
+#         externalUrl: http://concourse-ci.k8s.stg.lab.internal
+#         bindPort: 80
+#         tls:
+#           enabled: false
+#           bindPort: 443
+#       kubernetes:
+#         keepNamespace: false
+#       worker:
+#         kind: Deployment
+#         baggageclaim:
+#           driver: btrfs
+#     secrets:
+#       create: false
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
