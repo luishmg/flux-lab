@@ -108,14 +108,7 @@ spec:
         baggageclaim:
           driver: btrfs
       secrets:
-        localUsers: admin:$2y$10$7CiEp1/hCbDpgTvo2m478e9ZvzclxXr3tOPXzYqvUr9GMsBnEZXcS
         create: false
-        # workerKey: |
-        #   -----BEGIN RSA PRIVATE KEY-----
-        #   data data data data
-        #   -----END RSA PRIVATE KEY-----
-        # workerKeyPub: ssh-rsa datadatadata comment
-
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
