@@ -44,7 +44,6 @@ spec:
       name: concourse-web
       namespace: concourse
     type: Opaque
-
 ---
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
