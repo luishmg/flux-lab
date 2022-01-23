@@ -103,7 +103,7 @@ spec:
       kubernetes:
         keepNamespace: false
       worker:
-        kind: Deployment
+        ephemeral: true
         baggageclaim:
           driver: btrfs
     secrets:
