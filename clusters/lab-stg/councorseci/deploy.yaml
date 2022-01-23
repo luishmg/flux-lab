@@ -96,10 +96,10 @@ spec:
           mainTeam:
             localUser: admin 
         externalUrl: http://concourse-ci.k8s.stg.lab.internal
-        bindPort: 80
+        bindPort: 8080
         tls:
           enabled: false
-          bindPort: 443
+          bindPort: 8443
       kubernetes:
         keepNamespace: false
       worker:
@@ -159,4 +159,4 @@ spec:
     - destination:
         host: concourse-web
         port:
-          number: 80
+          number: 8080
