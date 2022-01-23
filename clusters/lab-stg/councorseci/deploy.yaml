@@ -35,7 +35,10 @@ spec:
     fullnameOverride: concourse
     concourse:
       web:
+        enabled: true
         externalUrl: "concourse-ci.k8s.stg.lab.internal"
+        kubernetes:
+          keepNamespace: false
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
