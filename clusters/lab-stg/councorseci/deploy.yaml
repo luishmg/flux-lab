@@ -35,10 +35,28 @@ spec:
     fullnameOverride: concourse
     concourse:
       web:
+        auth:
+          mainTeam:
+            localUser: admin 
+        externalUrl: http://concourse-ci.k8s.stg.lab.internal
+        bindPort: 80
+        tls:
+          enabled: false
+          bindPort: 443
         enabled: true
-        externalUrl: "concourse-ci.k8s.stg.lab.internal"
-        kubernetes:
-          keepNamespace: false
+      kubernetes:
+        keepNamespace: false
+      # worker:
+      #   kind: Deployment
+      #   baggageclaim:
+      #     driver: btrfs
+      secrets:
+        localUsers: admin:$2y$10$7CiEp1/hCbDpgTvo2m478e9ZvzclxXr3tOPXzYqvUr9GMsBnEZXcS
+      #   workerKey: |
+      #     -----BEGIN RSA PRIVATE KEY-----
+      #     data data data data
+      #     -----END RSA PRIVATE KEY-----
+      #   workerKeyPub: ssh-rsa datadatadata comment
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
