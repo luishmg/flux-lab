@@ -104,10 +104,45 @@ spec:
         keepNamespace: false
       worker:
         ephemeral: true
+        autoscaling:
+          # maxReplicas is required to for auto scaling
+          # see the following example for scaling on CPU_Utilization and on
+          # a custom metric 'concourse_workers_containers'
+          # for this to work you need to configure the metric eg. with prometheus adapter
+          maxReplicas: 5
+          minReplicas: 1
+          behavior:
+            scaleDown:
+              stabilizationWindowSeconds: 1200
+              selectPolicy: Min
+              policies:
+                - type: Percent
+                  value: 10
+                  periodSeconds: 300
+            scaleUp:
+              stabilizationWindowSeconds: 60
+          builtInMetrics:
+            - type: Resource
+              resource:
+                name: cpu
+                target:
+                  type: Utilization
+                  averageUtilization: 80
+          customMetrics:
+            - type: Pods
+              pods:
+                metric:
+                  name: concourse_workers_containers
+                target:
+                  type: AverageValue
+                  averageValue: 180
         baggageclaim:
           driver: btrfs
     secrets:
       create: false
+    worker:
+      enabled: true
+      kind: Deployment
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
