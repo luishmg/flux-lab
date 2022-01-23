@@ -107,8 +107,8 @@ spec:
         kind: Deployment
         baggageclaim:
           driver: btrfs
-      secrets:
-        create: false
+    secrets:
+      create: false
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
