@@ -22,4 +22,32 @@ spec:
         name: harbor
       version: 1.8.1
   interval: 1m0s
-
+  values:
+    portal:
+      replicas: 2
+    core:
+      replicas: 2
+    jobservice:
+      replicas: 2
+    registry:
+      replicas: 2
+    chartmuseum:
+      replicas: 2
+    clair:
+      replicas: 2
+    notary:
+      server:
+        replicas: 2
+      signer:
+        replicas: 2
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          storageClass: ceph-filesystem
+          accessMode: ReadWriteMany
+        chartmuseum:
+          storageClass: ceph-filesystem
+          accessMode: ReadWriteMany
+        jobservice:
+          storageClass: ceph-filesystem
+          accessMode: ReadWriteMany
