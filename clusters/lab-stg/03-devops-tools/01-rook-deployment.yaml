@@ -24,7 +24,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: rook-ceph
+      chart: rook-release/rook-ceph
       sourceRef:
         kind: HelmRepository
         name: rook-release
