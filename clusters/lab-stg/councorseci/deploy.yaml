@@ -102,6 +102,7 @@ spec:
           bindPort: 443
       kubernetes:
         keepNamespace: false
+        createTeamNamespaces: false
       worker:
         ephemeral: true
         autoscaling:
