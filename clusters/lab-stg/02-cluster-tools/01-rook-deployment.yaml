@@ -49,6 +49,3 @@ spec:
   interval: 1m0s
   values:
     operatorNamespace: rook-ceph
-    cephBlockPools:
-      storageClass:
-        enabled: true
