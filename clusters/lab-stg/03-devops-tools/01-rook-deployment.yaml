@@ -14,7 +14,7 @@ metadata:
   namespace: rook-ceph
 spec:
   interval: 1m
-  url: http://192.168.50.1:8000/
+  url: https://charts.rook.io/release
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -24,7 +24,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: rook-release/rook-ceph
+      chart: rook-ceph
       sourceRef:
         kind: HelmRepository
         name: rook-release
