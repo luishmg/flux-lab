@@ -32,6 +32,7 @@ metadata:
 # Change "rook-ceph" provisioner prefix to match the operator namespace if needed
 provisioner: rook-ceph.ceph.rook.io/bucket
 reclaimPolicy: Delete
+allowVolumeExpansion: true
 parameters:
   objectStoreName: cephos
   objectStoreNamespace: rook-ceph
