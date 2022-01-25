@@ -39,5 +39,5 @@ spec:
         namespace: rook-ceph
       version: 1.8.3
   interval: 1m0s
-  # values:
-  #   operatorNamespace: rook-ceph
+  values:
+    operatorNamespace: rook-ceph
