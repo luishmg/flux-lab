@@ -145,19 +145,6 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: concourse
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  path: ./environment/adm/concourse
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: cluster-extensions
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
   name: minkube-namespaces
   namespace: flux-system
 spec:
@@ -167,3 +154,16 @@ spec:
   sourceRef:
     kind: GitRepository
     name: minikube-namespaces
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: concourse
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./environment/adm/concourse
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: cluster-extensions
