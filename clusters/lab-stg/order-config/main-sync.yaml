@@ -97,7 +97,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./environment/stg/istio-resources
+  path: ./clusters/lab-stg/istio-resources
   prune: true
   sourceRef:
     kind: GitRepository
