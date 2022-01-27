@@ -1,9 +1,0 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: HelmRepository
-metadata:
-  name: chartmuseum
-  namespace: flux-system
-spec:
-  interval: 1m
-  url: http://192.168.50.1:8000/
