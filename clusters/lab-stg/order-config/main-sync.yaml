@@ -28,19 +28,6 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: rook-ceph-config
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  path: ./environment/common/rook-storage-config
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: cluster-extensions
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
   name: rook-ceph
   namespace: flux-system
 spec:
@@ -54,37 +41,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: rook-ceph-storage-class
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  path: ./environment/common/rook-storage-class
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: cluster-extensions
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: istio
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  path: ./environment/stg/istio
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: cluster-extensions
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
   name: istio-resources
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/lab-stg/istio-resources
+  path: ./clusters/lab-stg/istio
   prune: true
   sourceRef:
     kind: GitRepository
