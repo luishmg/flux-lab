@@ -15,11 +15,24 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
+  name: sealed-secrets-cluster-resources
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./clusters/lab-stg/sealed-secrets
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: cluster-extensions
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
   name: rook-ceph-config
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./environment/common/rook-storage/01-rook-crds.yaml
+  path: ./environment/common/rook-storage-config
   prune: true
   sourceRef:
     kind: GitRepository
@@ -28,24 +41,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: rook-ceph-common
+  name: rook-ceph
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./environment/common/rook-storage/02-common.yaml
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: cluster-extensions
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: rook-ceph-operator
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  path: ./environment/common/rook-storage/03-operator.yaml
+  path: ./environment/common/rook-storage
   prune: true
   sourceRef:
     kind: GitRepository
@@ -59,19 +59,6 @@ metadata:
 spec:
   interval: 10m0s
   path: ./environment/common/rook-storage-class
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: cluster-extensions
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: sealed-secrets-concourse
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  path: ./clusters/lab-stg/sealed-secrets/concourse.yaml
   prune: true
   sourceRef:
     kind: GitRepository
