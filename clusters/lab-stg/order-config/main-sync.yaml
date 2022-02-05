@@ -31,7 +31,7 @@ metadata:
   name: rook-ceph
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   path: ./environment/common/rook-storage
   prune: true
   sourceRef:
@@ -44,7 +44,7 @@ metadata:
   name: istio
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   path: ./clusters/lab-stg/istio
   prune: true
   sourceRef:
@@ -57,7 +57,7 @@ metadata:
   name: tekton
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   path: ./environment/stg/tekton
   prune: true
   sourceRef:
@@ -70,7 +70,7 @@ metadata:
   name: shipwright
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   path: ./environment/stg/shipwright
   prune: true
   sourceRef:
@@ -83,7 +83,7 @@ metadata:
   name: harbor
   namespace: flux-system
 spec:
-  interval: 5m0s
+  interval: 2m0s
   path: ./environment/stg/harbor
   prune: true
   sourceRef:
@@ -109,7 +109,7 @@ metadata:
   name: namespaces-and-apps
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   path: ./deploy/stg
   prune: true
   sourceRef:
@@ -122,7 +122,7 @@ metadata:
   name: concourse
   namespace: flux-system
 spec:
-  interval: 5m0s
+  interval: 2m0s
   path: ./environment/adm/concourse
   prune: true
   sourceRef:
